@@ -47,16 +47,19 @@ public static void main(String[] args)
 
 
         }
-        else
+        else  // User closed the chooser without selecting a file
         {
-            System.out.println("No file selected");
+            System.out.println("No file selected!!! ... exiting.\nRun the program again and select a file.");
         }
+    }
+    catch (FileNotFoundException e)
+    {
+        System.out.println("File not found!!!");
+        e.printStackTrace();
     }
     catch (IOException e)
     {
-        throw new RuntimeException(e);
+        e.printStackTrace();
     }
-
-
 
 }
